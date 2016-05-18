@@ -29,5 +29,8 @@
         "mockery/mockery": "^0.9.4",
         "kwn/php-rdkafka-stubs": "^0.0.4",
         "squizlabs/php_codesniffer": "^2.6.0"
+    },
+    "suggest": {
+        "kwn/php-rdkafka-stubs": "^0.0.4"
     }
 }
