@@ -6,7 +6,7 @@ Apache Kafka handler using [arnaud-lb/php-rdkafka](https://github.com/arnaud-lb/
 
 ## Installation
 
-In order to install a Kafka handler for Monolog add a dependency in your `composer.json` file:
+In order to install Kafka handler for Monolog add a dependency in your `composer.json` file:
 
 ```
 {
@@ -26,7 +26,7 @@ Make sure the `php-rdkadka` extension is installed and enabled in your `php.ini`
 
 ## Usage
 
-In order to use Kafka handler for Monolog, you need to create an instance of `\RdKafka\ProducerTopic`, and inject it via constructor in Kafka handler. Normally it should happen in your dependency injection container. Simple code showing how to create all necessary elements could be found below:
+In order to use Kafka handler for Monolog, you need to create an instance of `\RdKafka\ProducerTopic`, and inject it using constructor in Kafka handler. Normally it should happen in your dependency injection container. Simple code showing how to create all necessary elements could be found below:
 
 ```php
 <?php
