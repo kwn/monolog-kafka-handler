@@ -45,7 +45,7 @@ class KafkaHandlerIntegrationTest extends \PHPUnit_Framework_TestCase
 
         $monolog->critical(self::MESSAGE);
 
-        sleep(1);
+        sleep(2);
 
         $consumerTopic = $this->buildConsumerTopic();
         $consumerTopic->consumeStart(self::PARTITION, rd_kafka_offset_tail(1));
@@ -65,7 +65,11 @@ class KafkaHandlerIntegrationTest extends \PHPUnit_Framework_TestCase
         $producer = new Producer();
         $producer->addBrokers(self::BROKER);
 
-        return $producer->newTopic(self::TOPIC);
+        /** @var ProducerTopic $producerTopic */
+        $producerTopic = $producer->newTopic(self::TOPIC);
+        $producerTopic->produce(self::PARTITION, 0, 'initial message for a topic creation');
+
+        return $producerTopic;
     }
 
     /**
